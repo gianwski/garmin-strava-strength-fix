@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fc5200">
+<title>Garmin → Strava Strength Fix</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<style>
+  :root {
+    --bg: #f6f6f4; --card: #ffffff; --text: #1d1d1b; --muted: #6b6b66;
+    --line: #e2e2dc; --accent: #fc5200; --accent-text: #ffffff; --bad: #d11a2a;
+    --info-bg: #fff4e5; --err-bg: #fde8ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141413; --card: #1f1f1d; --text: #ecece8; --muted: #a0a09a;
+      --line: #34342f; --accent: #ff6a1f; --accent-text: #141413; --bad: #ff5c6a;
+      --info-bg: #3a2a14; --err-bg: #3d1a1e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 20px 16px 60px; }
+  h1 { font-size: 1.5rem; margin: 8px 0 6px; }
+  .lead { color: var(--muted); margin: 0 0 20px; }
+  section {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px; margin-bottom: 14px;
+  }
+  h2 { font-size: 1.05rem; margin: 0 0 4px; display: flex; gap: 10px; align-items: center; }
+  h2 .n {
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--accent-text);
+    display: inline-grid; place-items: center; font-size: .85rem; flex: none;
+  }
+  .help { color: var(--muted); font-size: .9rem; margin: 0 0 12px; }
+  label.file {
+    display: block; border: 2px dashed var(--line); border-radius: 12px; padding: 14px;
+    text-align: center; cursor: pointer; color: var(--muted);
+  }
+  label.file input { display: none; }
+  .fname { display: block; margin-top: 6px; color: var(--text); font-weight: 600; word-break: break-all; }
+  .block { border-top: 1px solid var(--line); padding: 12px 0; }
+  .block:first-child { border-top: 0; padding-top: 0; }
+  .meta { display: flex; gap: 10px; font-size: .88rem; color: var(--muted); margin-bottom: 6px; }
+  .range { font-weight: 700; color: var(--text); min-width: 44px; }
+  .block input {
+    width: 100%; font-size: 1rem; padding: 10px 12px; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--bg); color: var(--text);
+  }
+  .block input.bad { border-color: var(--bad); box-shadow: 0 0 0 1px var(--bad); }
+  .hint { font-size: .8rem; color: var(--muted); margin-top: 4px; }
+  .btn {
+    display: block; width: 100%; padding: 14px; border: 0; border-radius: 12px; text-align: center;
+    background: var(--accent); color: var(--accent-text); font-size: 1.05rem; font-weight: 700;
+    text-decoration: none; cursor: pointer;
+  }
+  .btn.secondary { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+  #msg { border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; }
+  #msg.error { background: var(--err-bg); }
+  #msg.info { background: var(--info-bg); }
+  footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 24px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1 data-t="title"></h1>
+  <p class="lead" data-t="lead"></p>
+  <div id="msg" hidden></div>
+
+  <section>
+    <h2><span class="n">1</span><span data-t="s1"></span></h2>
+    <p class="help" data-t="s1h"></p>
+    <label class="file">.zip / .fit<input id="fit" type="file" accept=".zip,.fit,application/zip,application/octet-stream"><span class="fname" id="fitname"></span></label>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span data-t="s2"></span></h2>
+    <p class="help" data-t="s2h"></p>
+    <label class="file">.csv<input id="csv" type="file" accept=".csv,text/csv"><span class="fname" id="csvname"></span></label>
+  </section>
+
+  <section id="step3" hidden>
+    <h2><span class="n">3</span><span data-t="s3"></span></h2>
+    <p class="help" data-t="s3h"></p>
+    <div id="blocks"></div>
+    <datalist id="catalog"></datalist>
+  </section>
+
+  <section id="step4" hidden>
+    <h2><span class="n">4</span><span data-t="s4"></span></h2>
+    <button class="btn" id="download" data-t="download"></button>
+  </section>
+
+  <section id="step5" hidden>
+    <h2><span class="n">5</span><span data-t="s5"></span></h2>
+    <p class="help" data-t="s5h"></p>
+    <a class="btn secondary" id="strava" target="_blank" rel="noopener" data-t="open"></a>
+  </section>
+
+  <footer>Open source · MIT · <a href="https://github.com/">GitHub</a> · Not affiliated with Garmin or Strava</footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
