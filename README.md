@@ -1,5 +1,10 @@
 # Garmin2Strava Strength Training Fixer
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/gianwski/garmin-strava-strength-fix)](https://github.com/gianwski/garmin-strava-strength-fix/commits)
+[![Open issues](https://img.shields.io/github/issues/gianwski/garmin-strava-strength-fix)](https://github.com/gianwski/garmin-strava-strength-fix/issues)
+[![Stars](https://img.shields.io/github/stars/gianwski/garmin-strava-strength-fix?style=social)](https://github.com/gianwski/garmin-strava-strength-fix/stargazers)
+
 Fix the strength training exercises your Garmin watch got wrong, and see the right workout on Strava.
 
 **Open the app: https://gianwski.github.io/garmin-strava-strength-fix/**
