@@ -6,13 +6,21 @@ Fix the strength training exercises your Garmin watch got wrong, and see the rig
 
 Garmin watches often misidentify strength exercises (a chest press becomes a sit-up,
 a lat pulldown a pull-up…). You can fix them in Garmin Connect, but those fixes never
-reach Strava, because Strava keeps the original file sent by the watch.
+reach Strava even if the automatic sync is on. This happens because even if you correct the exercise in Garmin Connect the `.fit` file you can upload on Strava does not contain the corrected exercise names.
 
-This web app fixes the workout file itself:
+This web app fixes the `.fit` file with the correct workout name:
 
-1. In [Garmin Connect](https://connect.garmin.com/modern/activities), open the activity → gear icon → **Export Original** (.zip).
-   Optional: fix the exercises there first (app or browser) and also **Export to CSV**.
-2. Open the app, load the .zip (and the .csv), check the exercises.
+1. This is optional, but **very recommended**: fix the exercises name in the Garmin app (or in the [browser](https://connect.garmin.com/modern/activities) if you prefer).
+
+2. In [Garmin Connect webpage](https://connect.garmin.com/modern/activities), open the activity, tap on gear icon and then tap on "Export File" (a `.zip` file should be downloaded). Then, if you have done step 1, tap on "Exports Splits on CSV" (a `.csv` file should be downloaded).
+  
+<img src="./images/gif1.gif" width="600">
+     
+2. Open the app, load the `.zip` (and the `.csv` if you already have corrected the exercise in the app or the browser) and edit the exercises name in the web app if you have not already corrected.
+
+<img src="./images/gif2.gif" width="600">
+
+
 3. **Download** the corrected file.
 4. **Delete the original activity on Strava**, then upload the new file at
    [strava.com/upload](https://www.strava.com/upload/select).
@@ -28,15 +36,9 @@ Works on phone and computer, no install, no Strava subscription needed.
 Use at your own risk. Keep the original .zip from Garmin Connect until you have checked the new
 workout on Strava. The software is provided "as is", without warranty of any kind.
 
-Independent open-source project, not affiliated with, endorsed by or sponsored by Garmin or Strava.
-Garmin and Strava are trademarks of their respective owners and are used only to describe compatibility.
-
-The exercise list is not stored in this repository: the page loads it at run time from Garmin's
-official FIT SDK package ([@garmin/fitsdk](https://www.npmjs.com/package/@garmin/fitsdk)), which is
-covered by Garmin's FIT Protocol License.
+Independent open-source project, not affiliated with Garmin or Strava.
 
 Privacy: no cookies, no tracking, no data collection. Files are processed only in your browser.
-The exercise list is downloaded from the jsDelivr CDN; the site is hosted on GitHub Pages.
 
 ## License
 
