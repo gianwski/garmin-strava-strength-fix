@@ -1,4 +1,8 @@
-# Garmin2Strava Strength Training Fixer
+<p align="center">
+  <img src="logo.svg" alt="Garmin2Strava Strength Training Fixer logo" width="128">
+</p>
+
+<h1 align="center">Garmin2Strava Strength Training Fixer</h1>
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/gianwski/garmin-strava-strength-fix)](https://github.com/gianwski/garmin-strava-strength-fix/commits)
