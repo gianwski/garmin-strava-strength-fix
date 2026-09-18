@@ -3,37 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fc5200">
-<title>Fix Garmin Strength Training Exercises on Strava | Garmin Connect edits not syncing</title>
+<meta name="theme-color" content="#0f766e">
+<title>Strength Workout Fixer: fix Garmin strength training exercises on Strava</title>
 <meta name="description" content="Garmin watch detected the wrong strength exercises and your Garmin Connect edits don't show on Strava? Free tool that writes the correct exercises, reps and weights into the FIT file so Strava shows the right workout.">
 <link rel="canonical" href="https://gianwski.github.io/garmin-strava-strength-fix/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gianwski.github.io/garmin-strava-strength-fix/">
-<meta property="og:title" content="Fix Garmin strength exercises on Strava">
+<meta property="og:title" content="Strength Workout Fixer: fix Garmin strength exercises on Strava">
 <meta property="og:description" content="Garmin watch detected the wrong strength exercises and your Garmin Connect edits don't show on Strava? Free tool that writes the correct exercises, reps and weights into the FIT file so Strava shows the right workout.">
-<meta property="og:image" content="https://gianwski.github.io/garmin-strava-strength-fix/og.png">
+<meta property="og:image" content="https://gianwski.github.io/garmin-strava-strength-fix/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fix Garmin strength exercises on Strava">
+<meta name="twitter:title" content="Strength Workout Fixer: fix Garmin strength exercises on Strava">
 <meta name="twitter:description" content="Garmin watch detected the wrong strength exercises and your Garmin Connect edits don't show on Strava? Free tool that writes the correct exercises, reps and weights into the FIT file so Strava shows the right workout.">
-<meta name="twitter:image" content="https://gianwski.github.io/garmin-strava-strength-fix/og.png">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Garmin to Strava Strength Fix", "url": "https://gianwski.github.io/garmin-strava-strength-fix/", "description": "Garmin watch detected the wrong strength exercises and your Garmin Connect edits don't show on Strava? Free tool that writes the correct exercises, reps and weights into the FIT file so Strava shows the right workout.", "applicationCategory": "SportsApplication", "operatingSystem": "Any (web browser)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Person", "name": "Gianluca Regni", "url": "https://github.com/gianwski"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why don't my Garmin Connect exercise edits show up on Strava?", "acceptedAnswer": {"@type": "Answer", "text": "Garmin Connect saves your edits only in its own database. The workout file (FIT) that the watch sent to Strava still contains the exercises the watch detected, and Garmin never sends the file again. Disconnecting and reconnecting Strava does not re-sync old activities."}}, {"@type": "Question", "name": "Does exporting the FIT file from Garmin Connect include my corrections?", "acceptedAnswer": {"@type": "Answer", "text": "No. Export Original gives you the file exactly as recorded by the watch, with the original exercise detection. This page writes your corrections into that file."}}, {"@type": "Question", "name": "How do I fix wrong exercises of a Garmin strength workout on Strava?", "acceptedAnswer": {"@type": "Answer", "text": "Download the original file from Garmin Connect, load it on this page, correct the exercises (or import the CSV with your Garmin Connect corrections), download the corrected file, delete the original activity on Strava and upload the new file at strava.com/upload."}}, {"@type": "Question", "name": "Will I lose heart rate, calories or other data?", "acceptedAnswer": {"@type": "Answer", "text": "No. Only the exercise, reps and weight of each set are changed. Everything else in the file stays exactly as your watch recorded it."}}, {"@type": "Question", "name": "Do I need a Strava subscription or to install anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. The page runs in your browser on phone or computer, and the manual upload on strava.com works with a free account. Your files are never sent to any server."}}, {"@type": "Question", "name": "Why does Strava say the activity is a duplicate?", "acceptedAnswer": {"@type": "Answer", "text": "The original activity uploaded by Garmin is still on Strava. Delete it first, then upload the corrected file."}}]}]</script>
+<meta name="twitter:image" content="https://gianwski.github.io/garmin-strava-strength-fix/og-image.png">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Strength Workout Fixer", "url": "https://gianwski.github.io/garmin-strava-strength-fix/", "description": "Garmin watch detected the wrong strength exercises and your Garmin Connect edits don't show on Strava? Free tool that writes the correct exercises, reps and weights into the FIT file so Strava shows the right workout.", "applicationCategory": "SportsApplication", "operatingSystem": "Any (web browser)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Person", "name": "Gianluca Regni", "url": "https://github.com/gianwski"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why don't my Garmin Connect exercise edits show up on Strava?", "acceptedAnswer": {"@type": "Answer", "text": "Garmin Connect saves your edits only in its own database. The workout file (FIT) that the watch sent to Strava still contains the exercises the watch detected, and Garmin never sends the file again. Disconnecting and reconnecting Strava does not re-sync old activities."}}, {"@type": "Question", "name": "Does exporting the FIT file from Garmin Connect include my corrections?", "acceptedAnswer": {"@type": "Answer", "text": "No. Export Original gives you the file exactly as recorded by the watch, with the original exercise detection. This page writes your corrections into that file."}}, {"@type": "Question", "name": "How do I fix wrong exercises of a Garmin strength workout on Strava?", "acceptedAnswer": {"@type": "Answer", "text": "Download the original file from Garmin Connect, load it on this page, correct the exercises (or import the CSV with your Garmin Connect corrections), download the corrected file, delete the original activity on Strava and upload the new file at strava.com/upload."}}, {"@type": "Question", "name": "Will I lose heart rate, calories or other data?", "acceptedAnswer": {"@type": "Answer", "text": "No. Only the exercise, reps and weight of each set are changed. Everything else in the file stays exactly as your watch recorded it."}}, {"@type": "Question", "name": "Do I need a Strava subscription or to install anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. The page runs in your browser on phone or computer, and the manual upload on strava.com works with a free account. Your files are never sent to any server."}}, {"@type": "Question", "name": "Why does Strava say the activity is a duplicate?", "acceptedAnswer": {"@type": "Answer", "text": "The original activity uploaded by Garmin is still on Strava. Delete it first, then upload the corrected file."}}]}]</script>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon.svg">
 <style>
   :root {
     --bg: #f6f6f4; --card: #ffffff; --text: #1d1d1b; --muted: #6b6b66;
-    --line: #e2e2dc; --accent: #fc5200; --accent-text: #ffffff; --bad: #d11a2a;
-    --info-bg: #fff4e5; --err-bg: #fde8ea;
+    --line: #e2e2dc; --accent: #0f766e; --accent-text: #ffffff; --bad: #d11a2a;
+    --info-bg: #e6f4f2; --err-bg: #fde8ea;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #141413; --card: #1f1f1d; --text: #ecece8; --muted: #a0a09a;
-      --line: #34342f; --accent: #ff6a1f; --accent-text: #141413; --bad: #ff5c6a;
-      --info-bg: #3a2a14; --err-bg: #3d1a1e;
+      --line: #34342f; --accent: #2dd4bf; --accent-text: #0b1f1d; --bad: #ff5c6a;
+      --info-bg: #123330; --err-bg: #3d1a1e;
     }
   }
   * { box-sizing: border-box; }
@@ -43,6 +43,7 @@
   }
   main { max-width: 640px; margin: 0 auto; padding: 20px 16px 60px; }
   h1 { font-size: 1.5rem; margin: 8px 0 6px; }
+  .sub { font-size: 1.05rem; font-weight: 600; margin: 0 0 12px; }
   .lead { color: var(--muted); margin: 0 0 12px; }
   section {
     background: var(--card); border: 1px solid var(--line); border-radius: 14px;
@@ -91,13 +92,15 @@
   .faq details:first-of-type { border-top: 0; }
   .faq summary { cursor: pointer; font-weight: 600; }
   .faq p { color: var(--muted); font-size: .95rem; margin: 8px 0 0; }
-  footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 24px; }
+  footer p { margin: 8px 0; }
+  footer { text-align: left; color: var(--muted); font-size: .8rem; margin-top: 24px; }
   footer a { color: inherit; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Fix Garmin strength training exercises on Strava</h1>
+  <h1>Strength Workout Fixer</h1>
+  <p class="sub">Fix the strength training exercises your Garmin watch got wrong, and see the right workout on Strava.</p>
   <p class="lead">
     Garmin watches often recognise strength exercises wrong (a chest press becomes a sit-up,
     a lat pulldown becomes a pull-up). You can fix them in Garmin Connect, but the fixes never
@@ -171,7 +174,16 @@
     <details><summary>Why does Strava say the activity is a duplicate?</summary><p>The original activity uploaded by Garmin is still on Strava. Delete it first, then upload the corrected file.</p></details>
   </section>
 
-  <footer>Open source · MIT · <a href="https://github.com/gianwski/garmin-strava-strength-fix">GitHub</a> · Not affiliated with Garmin or Strava</footer>
+  <footer>
+    <p><strong>Use at your own risk.</strong> Keep the original .zip from Garmin Connect until you have checked the new
+    workout on Strava. This software is provided "as is", without warranty of any kind.</p>
+    <p>Independent open-source project, not affiliated with, endorsed by or sponsored by Garmin or Strava.
+    Garmin and Strava are trademarks of their respective owners and are used here only to describe compatibility.
+    The exercise list is loaded from Garmin's official FIT SDK.</p>
+    <p>Privacy: no cookies, no tracking, no data collection. Your files are processed only in your browser.
+    The Garmin exercise list is downloaded from the jsDelivr CDN (see <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net" target="_blank" rel="noopener">its privacy policy</a>). The site is hosted on GitHub Pages (see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's privacy statement</a>).</p>
+    <p>MIT License · <a href="https://github.com/gianwski/garmin-strava-strength-fix">Source code on GitHub</a></p>
+  </footer>
 </main>
 <script type="module" src="app.js"></script>
 </body>

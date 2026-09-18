@@ -1,4 +1,6 @@
-# Garmin → Strava Strength Fix
+# Strength Workout Fixer
+
+Fix the strength training exercises your Garmin watch got wrong, and see the right workout on Strava.
 
 **Open the app: https://gianwski.github.io/garmin-strava-strength-fix/**
 
@@ -21,4 +23,21 @@ Heart rate, calories and times stay exactly as recorded by your watch.
 Everything runs in your browser: your files are never sent anywhere.
 Works on phone and computer, no install, no Strava subscription needed.
 
-MIT License · Not affiliated with Garmin or Strava.
+## Disclaimer
+
+Use at your own risk. Keep the original .zip from Garmin Connect until you have checked the new
+workout on Strava. The software is provided "as is", without warranty of any kind.
+
+Independent open-source project, not affiliated with, endorsed by or sponsored by Garmin or Strava.
+Garmin and Strava are trademarks of their respective owners and are used only to describe compatibility.
+
+The exercise list is not stored in this repository: the page loads it at run time from Garmin's
+official FIT SDK package ([@garmin/fitsdk](https://www.npmjs.com/package/@garmin/fitsdk)), which is
+covered by Garmin's FIT Protocol License.
+
+Privacy: no cookies, no tracking, no data collection. Files are processed only in your browser.
+The exercise list is downloaded from the jsDelivr CDN; the site is hosted on GitHub Pages.
+
+## License
+
+MIT, see [LICENSE](LICENSE). This applies to the code in this repository only.

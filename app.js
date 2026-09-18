@@ -3,7 +3,7 @@
 License: MIT (see LICENSE)
 
 Description:
-UI of the Garmin → Strava Strength Fix web app. Everything runs in the browser:
+UI of the Strength Workout Fixer web app. Everything runs in the browser:
 files never leave the device.
 */
 
@@ -16,7 +16,7 @@ const $ = id => document.getElementById(id);
 // ---------- i18n ----------
 const T = {
   en: {
-    title: "Garmin → Strava Strength Fix",
+    title: "Strength Workout Fixer",
     lead: "Garmin watches often guess strength exercises wrong, and fixes made in Garmin Connect never reach Strava. This page writes the correct exercises, reps and weights into your workout file, so you can upload it to Strava and see the right workout there.",
     s1: "Workout file (.zip)", s1h: "The .zip from Export Original. A .fit file works too.",
     s2: "Your Garmin Connect corrections (.csv)", s2h: "Only if you already fixed the exercises in Garmin Connect: the .csv from Export to CSV. Otherwise skip this step and fix the exercises below.",
@@ -288,8 +288,53 @@ $("download").addEventListener("click", () => {
 $("strava").href = STRAVA_UPLOAD;
 
 // load catalog
-const catalogReady = fetch("exercises.json").then(r => r.json()).then(data => {
-  CATALOG = data;
+/**
+ * Converts a FIT SDK camelCase enum name to snake_case ("latPulldown" -> "lat_pulldown")
+ *
+ * Args:
+ *     s (string): camelCase name.
+ *
+ * Returns:
+ *     name (string): snake_case name.
+ */
+const snake = s => s.replace(/([a-z])([A-Z0-9])/g, "$1_$2").replace(/([A-Z])([A-Z][a-z])/g, "$1_$2")
+                     .replace(/([0-9])([A-Za-z])/g, "$1_$2").toLowerCase();
+
+/**
+ * Builds the exercise catalog from the official Garmin FIT SDK profile
+ *
+ * The catalog is not stored in this repository: it is read at run time from
+ * Garmin's own @garmin/fitsdk package (FIT Protocol License).
+ *
+ * Args:
+ *     Profile (object): Profile export of @garmin/fitsdk.
+ *
+ * Returns:
+ *     catalog (Array): [catCode, subtype (-1 = generic), category, name], best match first.
+ */
+function buildCatalog(Profile) {
+  const types = Profile.types, out = [];
+  for (const [code, catCamel] of Object.entries(types.exerciseCategory)) {
+    if (catCamel === "unknown") continue;
+    const cat = snake(catCamel);
+    out.push([+code, -1, cat, cat]);
+    for (const [sub, name] of Object.entries(types[catCamel + "ExerciseName"] || {}))
+      out.push([+code, +sub, cat, snake(name)]);
+  }
+  // prefer common gym categories, and the generic entry before specific ones
+  const rank = e => [PREFERRED.includes(e[2]) ? PREFERRED.indexOf(e[2]) : PREFERRED.length, e[1] < 0 ? 0 : 1];
+  return out.map((e, i) => [e, rank(e), i])
+            .sort((a, b) => a[1][0] - b[1][0] || a[1][1] - b[1][1] || a[2] - b[2])
+            .map(x => x[0]);
+}
+
+const PREFERRED = ["bench_press", "row", "pull_up", "shoulder_press", "curl", "triceps_extension",
+                   "lateral_raise", "squat", "deadlift", "lunge", "flye", "crunch", "core", "plank"];
+const FIT_SDK_URL = "https://cdn.jsdelivr.net/npm/@garmin/fitsdk@21.214.0/+esm";
+
+// load catalog
+const catalogReady = import(FIT_SDK_URL).then(({ Profile }) => {
+  CATALOG = buildCatalog(Profile);
   const dl = $("catalog");
   for (const e of CATALOG) {
     const l = labelOf(e);
@@ -298,4 +343,4 @@ const catalogReady = fetch("exercises.json").then(r => r.json()).then(data => {
     o.value = l;
     dl.appendChild(o);
   }
-}).catch(e => say(`${L.err}: ${e.message}`));
+}).catch(e => say(`${L.err}: could not load the Garmin exercise list (${e.message}). Check your connection and reload.`));
