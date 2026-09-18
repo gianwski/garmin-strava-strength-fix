@@ -1,1 +1,32 @@
-{"name":"Garmin2Strava Strength Training Fixer","short_name":"Garmin2Strava Fixer","start_url":".","display":"standalone","background_color":"#f6f6f4","theme_color":"#0f766e","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]}
+{
+  "name": "Garmin2Strava Strength Training Fixer",
+  "short_name": "G2S Fixer",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f6f6f4",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "description": "Fix the strength training exercises your Garmin watch got wrong, and see the right workout on Strava."
+}
