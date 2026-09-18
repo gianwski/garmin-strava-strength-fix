@@ -17,7 +17,7 @@ const $ = id => document.getElementById(id);
 const T = {
   en: {
     title: "Garmin → Strava Strength Fix",
-    lead: "Fix the exercises your Garmin watch got wrong and upload the corrected workout to Strava. Your files never leave your device.",
+    lead: "Garmin watches often guess strength exercises wrong, and fixes made in Garmin Connect never reach Strava. This page writes the correct exercises, reps and weights into your workout file, so you can upload it to Strava and see the right workout there.",
     s1: "Garmin workout file", s1h: "Garmin Connect → activity → ⚙ → Export Original (.zip)",
     s2: "Corrections (optional)", s2h: "Garmin Connect → ⚙ → Export to CSV, after fixing the exercises there. Or skip it and edit below.",
     s3: "Check the exercises", s3h: "Tap a name to change it. Consecutive sets with the same weight are grouped.",
@@ -27,20 +27,8 @@ const T = {
     open: "Open Strava upload page", err: "Error", fixinput: "Fix the exercises marked in red first.",
     csvwarn: n => `The CSV has ${n.csv} sets, the file has ${n.fit}: extra sets were ignored.`,
   },
-  it: {
-    title: "Garmin → Strava Strength Fix",
-    lead: "Correggi gli esercizi che l'orologio Garmin ha sbagliato e carica l'allenamento corretto su Strava. I file non lasciano mai il tuo dispositivo.",
-    s1: "File dell'allenamento Garmin", s1h: "Garmin Connect → attività → ⚙ → Esporta originale (.zip)",
-    s2: "Correzioni (facoltativo)", s2h: "Garmin Connect → ⚙ → Esporta in CSV, dopo aver corretto lì gli esercizi. Oppure salta e correggi qui sotto.",
-    s3: "Controlla gli esercizi", s3h: "Tocca un nome per cambiarlo. I set consecutivi con lo stesso peso sono raggruppati.",
-    sets: "set", detected: "orologio", unknown: "Non è nell'elenco Garmin: scegline uno dai suggerimenti",
-    s4: "Scarica il file corretto", download: "Scarica il file corretto",
-    s5: "Carica su Strava", s5h: "Prima elimina l'attività originale su Strava, altrimenti l'upload viene rifiutato come duplicato. Poi carica il file scaricato (da telefono usa l'opzione “Sito desktop” del browser).",
-    open: "Apri la pagina di upload di Strava", err: "Errore", fixinput: "Prima correggi gli esercizi segnati in rosso.",
-    csvwarn: n => `Il CSV ha ${n.csv} set, il file ne ha ${n.fit}: i set in più sono stati ignorati.`,
-  },
 };
-const L = T[(navigator.language || "en").slice(0, 2)] || T.en;
+const L = T.en;
 document.querySelectorAll("[data-t]").forEach(el => { el.textContent = L[el.dataset.t]; });
 document.title = L.title;
 
