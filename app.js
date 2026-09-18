@@ -3,7 +3,7 @@
 License: MIT (see LICENSE)
 
 Description:
-UI of the Strength Workout Fixer web app. Everything runs in the browser:
+UI of the Strength Workout Fixer from Garmin to Strava web app. Everything runs in the browser:
 files never leave the device.
 */
 
@@ -16,7 +16,7 @@ const $ = id => document.getElementById(id);
 // ---------- i18n ----------
 const T = {
   en: {
-    title: "Strength Workout Fixer",
+    title: "Strength Workout Fixer from Garmin to Strava",
     lead: "Garmin watches often guess strength exercises wrong, and fixes made in Garmin Connect never reach Strava. This page writes the correct exercises, reps and weights into your workout file, so you can upload it to Strava and see the right workout there.",
     s1: "Workout file (.zip)", s1h: "The .zip from Export Original. A .fit file works too.",
     s2: "Your Garmin Connect corrections (.csv)", s2h: "Only if you already fixed the exercises in Garmin Connect: the .csv from Export to CSV. Otherwise skip this step and fix the exercises below.",

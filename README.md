@@ -1,4 +1,4 @@
-# Strength Workout Fixer
+# Strength Workout Fixer from Garmin to Strava
 
 Fix the strength training exercises your Garmin watch got wrong, and see the right workout on Strava.
 
@@ -6,7 +6,7 @@ Fix the strength training exercises your Garmin watch got wrong, and see the rig
 
 Garmin watches often misidentify strength exercises (a chest press becomes a sit-up,
 a lat pulldown a pull-up…). You can fix them in Garmin Connect, but those fixes never
-reach Strava even if the automatic sync is on. This happens because even if you correct the exercise in Garmin Connect the `.fit` file you can upload on Strava does not contain the corrected exercise names.
+reach Strava even if the automatic sync is on. Also, if you correct the exercise in Garmin the `.fit` file you can upload on Strava does not contain the corrected exercise names.
 
 This web app fixes the `.fit` file with the correct workout name:
 
@@ -33,8 +33,7 @@ Works on phone and computer, no install, no Strava subscription needed.
 
 ## Disclaimer
 
-Use at your own risk. Keep the original .zip from Garmin Connect until you have checked the new
-workout on Strava. The software is provided "as is", without warranty of any kind.
+Use at your own risk. The software is provided "as is", without warranty of any kind.
 
 Independent open-source project, not affiliated with Garmin or Strava.
 
