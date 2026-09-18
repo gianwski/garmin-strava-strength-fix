@@ -43,6 +43,9 @@
   }
   main { max-width: 640px; margin: 0 auto; padding: 20px 16px 60px; }
   h1 { font-size: 1.5rem; margin: 8px 0 6px; }
+  .brand { display: flex; align-items: center; gap: 14px; margin: 8px 0 6px; }
+  .brand img { flex: none; }
+  .brand h1 { margin: 0; line-height: 1.2; }
   .sub { font-size: 1.05rem; font-weight: 600; margin: 0 0 12px; }
   .lead { color: var(--muted); margin: 0 0 12px; }
   section {
@@ -99,7 +102,10 @@
 </head>
 <body>
 <main>
-  <h1>Garmin2Strava Strength Training Fixer</h1>
+  <div class="brand">
+    <img src="logo.svg" alt="" width="56" height="56">
+    <h1>Garmin2Strava Strength Training Fixer</h1>
+  </div>
   <p class="sub">Fix the strength training exercises your Garmin watch got wrong, and see the right workout on Strava.</p>
   <p class="lead">
     Garmin watches often misidentify strength exercises (a chest press becomes a sit-up,
