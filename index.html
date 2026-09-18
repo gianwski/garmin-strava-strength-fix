@@ -61,8 +61,12 @@
     text-decoration: none; cursor: pointer;
   }
   .btn.secondary { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
-  .how { margin: 0 0 10px; padding-left: 20px; }
-  .how li { margin: 2px 0; }
+  .guide h2 { margin-bottom: 10px; }
+  .guide p, .guide li { font-size: .95rem; }
+  .guide p { margin: 8px 0; }
+  .guide ul, .guide ol { margin: 4px 0 10px; padding-left: 20px; }
+  .guide li { margin: 4px 0; }
+  a { color: var(--accent); }
   .privacy { color: var(--muted); font-size: .9rem; margin: 0 0 20px; }
   #msg { border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; }
   #msg.error { background: var(--err-bg); }
@@ -74,13 +78,38 @@
 <body>
 <main>
   <h1 data-t="title"></h1>
-  <p class="lead" data-t="lead"></p>
-  <ul class="how">
-    <li>Load the workout file exported from Garmin Connect</li>
-    <li>Check and fix the exercises (or import your Garmin Connect corrections)</li>
-    <li>Download the corrected file and upload it to Strava</li>
-  </ul>
-  <p class="privacy">🔒 Everything runs in your browser: your files are never uploaded anywhere.</p>
+  <p class="lead">
+    Garmin watches often recognise strength exercises wrong (a chest press becomes a sit-up,
+    a lat pulldown becomes a pull-up). You can fix them in Garmin Connect, but the fixes never
+    reach Strava: Strava keeps the original file sent by the watch, and Garmin never sends it again.
+  </p>
+  <p class="lead">
+    This page writes the correct exercises, reps and weights directly into the workout file.
+    You then upload the corrected file to Strava, which shows the right workout.
+    Heart rate, calories and times stay exactly as your watch recorded them.
+  </p>
+
+  <section class="guide">
+    <h2>Before you start: prepare the files in Garmin Connect</h2>
+    <p><strong>A. Fix the exercises in Garmin Connect</strong> (optional, but then you fix them only once):</p>
+    <ul>
+      <li><strong>App:</strong> open the activity, go to the list of exercises / sets,
+        tap the wrong exercise and choose the correct one. Save.</li>
+      <li><strong>Browser:</strong> open the activity on
+        <a href="https://connect.garmin.com/modern/activities" target="_blank" rel="noopener">connect.garmin.com</a>,
+        click the name of the wrong exercise in the exercise list and choose the correct one. Save.</li>
+    </ul>
+    <p><strong>B. Download the files</strong> (only from the browser, it works on the phone too):</p>
+    <ol>
+      <li>Open <a href="https://connect.garmin.com/modern/activities" target="_blank" rel="noopener">your activities on Garmin Connect</a> and open the strength workout.</li>
+      <li>Click the gear icon at the top right, then <strong>Export Original</strong>: you get a .zip file.</li>
+      <li>From the same menu choose <strong>Export to CSV</strong>: you get the list of exercises with your corrections.</li>
+    </ol>
+    <p>Then load both files below. If you did not fix the exercises in Garmin Connect,
+    load only the .zip and fix the exercises in step 3.</p>
+  </section>
+
+  <p class="privacy">Everything runs in your browser: your files are never uploaded anywhere.</p>
   <div id="msg" hidden></div>
 
   <section>
@@ -113,7 +142,7 @@
     <a class="btn secondary" id="strava" target="_blank" rel="noopener" data-t="open"></a>
   </section>
 
-  <footer>Open source · MIT · <a href="https://github.com/">GitHub</a> · Not affiliated with Garmin or Strava</footer>
+  <footer>Open source · MIT · <a href="https://github.com/gianwski/garmin-strava-strength-fix">GitHub</a> · Not affiliated with Garmin or Strava</footer>
 </main>
 <script type="module" src="app.js"></script>
 </body>
