@@ -1,0 +1,21 @@
+name: Exercise name problem
+description: An exercise from Garmin Connect is not recognised or is mapped to the wrong exercise
+labels: [exercise]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Exercise name as shown in Garmin Connect
+      placeholder: e.g. Lat Pull-down
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: Expected exercise
+      description: The exercise it should become (if you know it).
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened?
+      description: Marked in red on the page, wrong exercise on Strava, …

@@ -41,4 +41,4 @@ Privacy: no cookies, no tracking, no data collection. Files are processed only i
 
 ## License
 
-MIT, see [LICENSE](LICENSE). This applies to the code in this repository only.
+MIT, see [LICENSE](LICENSE).

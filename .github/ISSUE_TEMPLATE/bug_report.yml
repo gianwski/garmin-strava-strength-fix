@@ -1,0 +1,32 @@
+name: Bug report
+description: Something does not work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please do not attach your .zip, .fit or .csv files**: they contain personal data.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message
+      description: Copy any error shown on the page (if any).
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: e.g. iPhone 15, Safari / Windows 11, Chrome
+    validations:
+      required: true
+  - type: input
+    id: watch
+    attributes:
+      label: Garmin watch model
+      placeholder: e.g. Forerunner 165
