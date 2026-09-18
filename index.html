@@ -43,9 +43,13 @@
   }
   main { max-width: 640px; margin: 0 auto; padding: 20px 16px 60px; }
   h1 { font-size: 1.5rem; margin: 8px 0 6px; }
-  .brand { display: flex; align-items: center; gap: 14px; margin: 8px 0 6px; }
-  .brand img { flex: none; }
-  .brand h1 { margin: 0; line-height: 1.2; }
+  .brand { position: relative; text-align: center; padding: 48px 0 40px; margin: 0 0 18px; overflow: hidden; }
+  .brand .mark { position: absolute; left: 50%; top: 50%; width: 340px; max-width: 95%;
+                 transform: translate(-50%, -50%); color: var(--accent); opacity: .12; pointer-events: none; z-index: 0; }
+  .brand h1, .brand .sub { position: relative; z-index: 1; }
+  .brand h1 { margin: 0 0 10px; line-height: 1.2; font-size: 1.7rem; }
+  .brand .sub { margin: 0 auto; max-width: 30em; }
+  @media (prefers-color-scheme: dark) { .brand .mark { opacity: .16; } }
   .sub { font-size: 1.05rem; font-weight: 600; margin: 0 0 12px; }
   .lead { color: var(--muted); margin: 0 0 12px; }
   section {
@@ -103,7 +107,6 @@
 <body>
 <main>
   <div class="brand">
-    <img src="logo.svg" alt="" width="56" height="56">
     <h1>Garmin2Strava Strength Training Fixer</h1>
   </div>
   <p class="sub">Fix the strength training exercises your Garmin watch got wrong, and see the right workout on Strava.</p>
@@ -169,7 +172,7 @@
   </section>
 
   <section class="faq">
-    <h2>Frequently asked questions</h2>
+    <h2>Frequently Asked Questions</h2>
     <details><summary>Why don't my Garmin Connect exercise edits show up on Strava?</summary><p>Garmin Connect saves your edits only in its own database. The workout file (FIT) that the watch sent to Strava still contains the exercises the watch detected, and Garmin never sends the file again. Disconnecting and reconnecting Strava does not re-sync old activities.</p></details>
     <details><summary>Does exporting the FIT file from Garmin Connect include my corrections?</summary><p>No. Export File gives you the file .fit exactly as recorded by the watch, with the original exercise detection. This page writes your corrections into that file.</p></details>
     <details><summary>How do I fix wrong exercises of a Garmin strength workout on Strava?</summary><p>Download the original file from Garmin Connect, load it on this page, correct the exercises (or import the CSV with your Garmin Connect corrections), download the corrected file, delete the original activity on Strava and upload the new file at strava.com/upload.</p></details>
