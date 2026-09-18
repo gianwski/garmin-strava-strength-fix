@@ -30,7 +30,6 @@ const T = {
 };
 const L = T.en;
 document.querySelectorAll("[data-t]").forEach(el => { el.textContent = L[el.dataset.t]; });
-document.title = L.title;
 
 // ---------- exercise catalog ----------
 let CATALOG = [];                 // [catCode, subtype(-1 = generic), category, name], best-first

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gianwski.github.io/garmin-strava-strength-fix/sitemap.xml
