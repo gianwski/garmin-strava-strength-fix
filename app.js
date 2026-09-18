@@ -19,7 +19,7 @@ const T = {
     title: "Garmin → Strava Strength Fix",
     lead: "Garmin watches often guess strength exercises wrong, and fixes made in Garmin Connect never reach Strava. This page writes the correct exercises, reps and weights into your workout file, so you can upload it to Strava and see the right workout there.",
     s1: "Workout file (.zip)", s1h: "The .zip from Export Original. A .fit file works too.",
-    s2: "Your Garmin Connect corrections (.csv)", s2h: "The .csv from Export to CSV. Skip it if you prefer to fix the exercises below.",
+    s2: "Your Garmin Connect corrections (.csv)", s2h: "Only if you already fixed the exercises in Garmin Connect: the .csv from Export to CSV. Otherwise skip this step and fix the exercises below.",
     s3: "Check the exercises", s3h: "Each box is a group of consecutive sets. Below it you see what the watch recorded. Tap a name to change it and pick the right exercise from the list.",
     sets: "sets", detected: "watch", unknown: "Not in the Garmin list: pick one from the suggestions",
     s4: "Get the corrected file", download: "Download corrected file",
