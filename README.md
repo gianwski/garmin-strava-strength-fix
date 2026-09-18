@@ -1,4 +1,4 @@
-# Strength Workout Fixer from Garmin to Strava
+# Garmin2Strava Strength Training Fixer
 
 Fix the strength training exercises your Garmin watch got wrong, and see the right workout on Strava.
 

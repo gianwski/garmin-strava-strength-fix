@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve Strength Workout Fixer!
+Thanks for helping improve Garmin2Strava Strength Training Fixer!
 
 ## Ways to help
 
