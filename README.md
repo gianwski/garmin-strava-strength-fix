@@ -40,6 +40,16 @@ Heart rate, calories and times stay exactly as recorded by your watch.
 Everything runs in your browser: your files are never sent anywhere.
 Works on phone and computer, no install, no Strava subscription needed.
 
+## Install it like an app (optional)
+
+The web app can be added to your home screen and opened like an app, without an app store:
+
+- **Android (Chrome):** menu (three dots) → **Install app** / **Add to Home screen**
+- **iPhone / iPad (Safari):** **Share** → **Add to Home Screen**
+- **Computer (Chrome / Edge):** install icon at the right end of the address bar
+
+It is only a shortcut to the same page.
+
 ## Disclaimer
 
 Use at your own risk. The software is provided "as is", without warranty of any kind.
